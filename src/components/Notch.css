@@ -1,0 +1,27 @@
+.notch {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px 0px 10px;
+}
+
+.dados, .horario {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.bateria {
+    height: 100%;
+    margin-left: 2px;
+}
+
+.wifi {
+    height: 100%;
+    margin-right: 5px;
+}
+
+.audio {
+    height: 100%;
+    margin-right: 5px;
+}
