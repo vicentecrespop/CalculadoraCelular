@@ -11,7 +11,7 @@ let minutos = `${dataAtual.getMinutes()}`
 minutos = minutos.length === 1 ? `0${minutos}` : minutos
 horas = horas.length === 1 ? `0${horas}` : horas
 
-export default props => {
+const Notch = props => {
     return (
         <div className="notch">
             <div className="horario">
@@ -26,3 +26,5 @@ export default props => {
         </div>
     )
 }
+
+export default Notch

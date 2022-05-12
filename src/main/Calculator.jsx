@@ -40,7 +40,7 @@ export default class Calculator extends Component {
         let operation = op === '*' || op === '/' ? op : '+'
         values[1] = values[1] === 0 && (op === '*' || op === '/') ? 1 : values[1]
         if (current === 1) {
-            values[0] = eval(`${values[0]} ${operation} ${values[1]}`)
+            values[0] = this.solveOperation(values[0], values[1], operation)
             values[1] = 0
         }
         operation = this.state.newOperation ? '+' : operation
@@ -55,6 +55,15 @@ export default class Calculator extends Component {
         })
     }
 
+    solveOperation(n1, n2, operation) {
+        switch(operation) {
+            case '*': return n1 * n2
+            case '/': return n1 / n2
+            case '+': return n1 + n2
+            case '-': return n1 - n2
+        }
+    }
+
 
     setOperation(operation) {
         if (this.state.current === 0) {
@@ -66,7 +75,7 @@ export default class Calculator extends Component {
             const values = [...this.state.values]
             values[1] = values[1] === 0 && (operation === '*' || operation === '/') ? 1 : values[1]
             try {
-                values[0] = eval(`${values[0]} ${currentOperation} ${values[1]}`)
+                values[0] = this.solveOperation(values[0], values[1], currentOperation)
                 if (isNaN(values[0]) || !isFinite(values[0])) {
                     this.clearMemory()
                     return

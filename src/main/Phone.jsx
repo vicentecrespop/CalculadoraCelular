@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import './Phone.css'
 
 import Calculator from "./Calculator";
 import Notch from '../components/Notch'
 
 
-export default props => {
+const Phone = props => {
     return (
         <div className="celular">            
             <Notch />
@@ -13,3 +13,5 @@ export default props => {
         </div>
     )
 }
+
+export default Phone
